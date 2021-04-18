@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_title_text_size">30sp</dimen>
+    <dimen name="title_tool_bar_text_size">20sp</dimen>
+
+    <dimen name="item_list_latest_news_relative_margin">5dp</dimen>
+    <dimen name="item_list_latest_news_relative_padding">1dp</dimen>
+    <dimen name="item_list_latest_news_image_height">150dp</dimen>
+    <dimen name="item_list_latest_news_image_margin">10dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+
+    <dimen name="list_latest_news_item_textSize">12sp</dimen>
+    <dimen name="latest_news_item_paddingStartEnd">10dp</dimen>
+    <dimen name="latest_news_item_paddingTopBottom">5dp</dimen>
+    <dimen name="dashboard_item_price_marginTop">2dp</dimen>
+
+    <dimen name="tv_latest_news_size">25sp</dimen>
+
+</resources>
