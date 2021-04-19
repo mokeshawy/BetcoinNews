@@ -1,53 +1,22 @@
 package com.example.betcoinnews.adapter
 
-
-import android.content.Context
 import android.util.SparseBooleanArray
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.example.betcoinnews.databinding.ItemListLatestNewsBinding
-import com.example.betcoinnews.latestnewsfragment.LatestNewsFragment
-import com.example.betcoinnews.latestnewsfragment.LatestNewsViewModel
 import com.example.betcoinnews.model.NewsModel
-import com.example.betcoinnews.operationroomdb.AppDataBase
-import com.example.betcoinnews.response.Article
-import com.example.betcoinnews.util.UtilBuilder
+import com.example.betcoinnews.savenewsfragment.SaveNewsViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 
-
-class RecyclerLatestNewsAdapter (private val dataSet: List<Article> , var onClickItem : OnClick ) : RecyclerView.Adapter<RecyclerLatestNewsAdapter.ViewHolder>() {
+class RecyclerSaveNewsAdapter (private val dataSet: List<NewsModel>, var onClickItem : OnClick ) : RecyclerView.Adapter<RecyclerSaveNewsAdapter.ViewHolder>() {
 
     class ViewHolder(var binding: ItemListLatestNewsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        var checkBoxArray = SparseBooleanArray()
+        var saveNewsViewModel = SaveNewsViewModel()
         // fun initialize inter face
-        fun initialize( viewHolder: ViewHolder , dataSet: Article , action : OnClick){
+        fun initialize(viewHolder: ViewHolder, dataSet: NewsModel, action : OnClick){
             action.onClickItem(viewHolder , dataSet , adapterPosition)
-
-            var latestNewsFragment = LatestNewsViewModel()
-
-            binding.togButtSave.isChecked = checkBoxArray.get( adapterPosition , false)
-            binding.togButtSave.setOnClickListener {
-                if(!checkBoxArray.get(adapterPosition , false)){
-
-                    binding.togButtSave.isChecked = true
-                    checkBoxArray.put( adapterPosition , true)
-
-                    latestNewsFragment.insertNewsToRomDb( itemView.context ,  dataSet.title , dataSet.description , dataSet.urlToImage )
-
-                }else{
-
-                    binding.togButtSave.isChecked = false
-                    checkBoxArray.put( adapterPosition , false)
-
-                }
-            }
 
         }
 
@@ -81,6 +50,6 @@ class RecyclerLatestNewsAdapter (private val dataSet: List<Article> , var onClic
 
     // Interface for onClick item
     interface OnClick{
-        fun onClickItem( viewHolder: ViewHolder , dataSet: Article , position: Int)
+        fun onClickItem(viewHolder: ViewHolder, dataSet: NewsModel, position: Int)
     }
 }

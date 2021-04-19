@@ -12,5 +12,8 @@
 
     <string name="content_description">image</string>
     <string name="tv_latest_news_not_found">No News</string>
+    <string name="tv_save_news_found">No Save any news</string>
+    <string name="tv_progress_bar_loading">Loading...</string>
+
 
 </resources>

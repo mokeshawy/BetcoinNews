@@ -12,6 +12,7 @@
         <action
             android:id="@+id/action_splashFragment_to_viewPagerFragment"
             app:destination="@id/viewPagerFragment"
+            app:enterAnim="@android:anim/fade_in"
             app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment

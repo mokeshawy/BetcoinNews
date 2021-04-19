@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/view_divider"
             android:background="@color/purple_200"
+            android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingStart="@dimen/latest_news_item_paddingStartEnd"
             android:paddingTop="@dimen/latest_news_item_paddingTopBottom"
@@ -48,11 +49,19 @@
             <TextView
                 android:id="@+id/tv_latest_news_item"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tv_itm_list_title_height"
                 android:textColor="@color/white"
                 android:textSize="@dimen/list_latest_news_item_textSize"
-                android:textStyle="bold"
                 tools:text="Item Name"/>
+
+            <ToggleButton
+                android:id="@+id/tog_butt_save"
+                android:layout_width="@dimen/toggle_button_width"
+                android:layout_height="@dimen/toggle_button_height"
+                android:background="@drawable/toggle_selector"
+                android:textOff=""
+                android:textOn=""
+                android:layout_gravity="end|bottom"/>
 
         </LinearLayout>
 

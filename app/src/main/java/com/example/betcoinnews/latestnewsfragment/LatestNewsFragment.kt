@@ -8,15 +8,18 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.viewpager2.widget.ViewPager2
 import com.example.betcoinnews.R
 import com.example.betcoinnews.adapter.RecyclerLatestNewsAdapter
 import com.example.betcoinnews.databinding.FragmentLatestNewsBinding
 import com.example.betcoinnews.response.Article
+import com.example.betcoinnews.util.UtilBuilder
 
 class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
 
     lateinit var binding            : FragmentLatestNewsBinding
     private val latestNewsViewModel : LatestNewsViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -32,14 +35,25 @@ class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
         binding.latestNewsVarModel  = latestNewsViewModel
 
 
+        // Show progress dialog
+        UtilBuilder.showProgressDialog(getString(R.string.tv_progress_bar_loading) , requireActivity())
         // Call fun for operation api get news betCoin
-        latestNewsViewModel.getBetCoinNews( binding.rvLatestNews , binding.tvLatestNewsNotFound)
+        latestNewsViewModel.getBetCoinNews( binding.rvLatestNews , binding.tvLatestNewsNotFound , requireActivity())
         latestNewsViewModel.latestNewsResponse.observe(viewLifecycleOwner , Observer {
-            binding.rvLatestNews.adapter = RecyclerLatestNewsAdapter(it.articles , this)
+            binding.rvLatestNews.adapter = RecyclerLatestNewsAdapter(it.articles , this )
+            // Hide progress
+            UtilBuilder.hideProgressDialog()
         })
+
     }
 
+    // Override fun onClick from interface
     override fun onClickItem(viewHolder: RecyclerLatestNewsAdapter.ViewHolder, dataSet: Article, position: Int) {
+
+        // Make check on select item continuous
+        latestNewsViewModel.checkForToggleButton( requireActivity() , dataSet.title , viewHolder.binding.togButtSave)
+
+        // Go to details after click on item
         viewHolder.itemView.setOnClickListener {
             Toast.makeText(requireActivity() , dataSet.title , Toast.LENGTH_SHORT).show()
         }
