@@ -22,6 +22,7 @@ class SaveNewsViewModel : ViewModel() {
 
     var showSaveNews = MutableLiveData<List<NewsModel>>()
 
+    // Show data from room data base
     fun showSaveNewsFromRoom(context : Context, rv_latest_news : RecyclerView, tv_latest_news_not_found : TextView){
 
         CoroutineScope(Dispatchers.IO).async {

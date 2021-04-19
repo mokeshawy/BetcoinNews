@@ -46,6 +46,7 @@ class RecyclerLatestNewsAdapter (private val dataSet: List<Article> , var onClic
                     binding.togButtSave.isChecked = false
                     checkBoxArray.put( adapterPosition , false)
 
+                    latestNewsFragment.deleteItemsFormRoomBd(itemView.context , dataSet.title)
                 }
             }
 

@@ -16,4 +16,7 @@ interface NewsDao {
 
     @Query("SELECT * FROM NewsModel")
     suspend fun selectAllNews() : List<NewsModel>
+
+    @Query("DELETE FROM NewsModel WHERE title = :title")
+    suspend fun deleteItems( title: String )
 }
