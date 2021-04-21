@@ -23,8 +23,12 @@
     <fragment
         android:id="@+id/viewPagerFragment"
         android:name="com.example.betcoinnews.viewpagerfragment.ViewPagerFragment"
-        android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        android:label="BetCoin News"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_detailsNewsFragment"
+            app:destination="@id/detailsNewsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/saveNewsFragment"
         android:name="com.example.betcoinnews.savenewsfragment.SaveNewsFragment"
@@ -35,4 +39,13 @@
         android:name="com.example.betcoinnews.othernewsfragment.OtherNewsFragment"
         android:label="Other News"
         tools:layout="@layout/fragment_other_news" />
+    <fragment
+        android:id="@+id/detailsNewsFragment"
+        android:name="com.example.betcoinnews.detailsnewsfragment.DetailsNewsFragment"
+        android:label="Details News"
+        tools:layout="@layout/fragment_details_news" >
+        <argument
+            android:name="detailsNews"
+            app:argType="com.example.betcoinnews.response.Article" />
+    </fragment>
 </navigation>

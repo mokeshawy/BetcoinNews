@@ -1,10 +1,9 @@
 package com.example.betcoinnews.viewpagerfragment
 
 import android.os.Bundle
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.betcoinnews.R
 import com.example.betcoinnews.databinding.FragmentViewPagerBinding
 import com.example.betcoinnews.latestnewsfragment.LatestNewsFragment

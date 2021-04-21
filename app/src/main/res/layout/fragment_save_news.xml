@@ -14,23 +14,23 @@
         android:layout_height="match_parent"
         tools:context=".savenewsfragment.SaveNewsFragment">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/app_gradinet_color_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" >
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="@drawable/app_gradinet_color_background"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" >-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/title_tool_bar_save_news"
-                android:textSize="@dimen/title_tool_bar_text_size"
-                android:textColor="@color/white"/>
-        </androidx.appcompat.widget.Toolbar>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/title_tool_bar_save_news"-->
+<!--                android:textSize="@dimen/title_tool_bar_text_size"-->
+<!--                android:textColor="@color/white"/>-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_layout"
@@ -40,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -49,7 +49,7 @@
                 android:layout_height="700dp"
                 android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"/>
+                app:spanCount="2" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -64,7 +64,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toTopOf="parent"  />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

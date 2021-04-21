@@ -55,6 +55,18 @@ class SaveNewsViewModel : ViewModel() {
     }
 
 
+    fun deleteFromRoomDataBase(context: Context , title: String){
+        CoroutineScope(Dispatchers.IO).async{
+            var dataBase : AppDataBase = Room.databaseBuilder(context , AppDataBase::class.java , UtilBuilder.DATA_BASE_NAME).build()
+
+            CoroutineScope(Dispatchers.Main).async {
+
+                dataBase.newsDao().deleteItems(title)
+
+            }
+        }
+    }
+
     // Make check on select item continuous
     fun checkForToggleButton(context: Context , title: String  , button: ToggleButton){
 

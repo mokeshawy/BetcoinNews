@@ -45,8 +45,8 @@ class SaveNewsFragment : Fragment() , RecyclerSaveNewsAdapter.OnClick{
         // Make check on select item continuous
         saveNewsViewModel.checkForToggleButton( requireActivity() , dataSet.title , viewHolder.binding.togButtSave)
 
-        viewHolder.itemView.setOnClickListener {
-            Toast.makeText(context, dataSet.title , Toast.LENGTH_SHORT).show()
+        viewHolder.binding.togButtSave.setOnClickListener {
+            saveNewsViewModel.deleteFromRoomDataBase(requireActivity() , dataSet.title)
         }
 
     }

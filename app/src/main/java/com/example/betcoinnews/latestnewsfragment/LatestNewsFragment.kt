@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.betcoinnews.R
 import com.example.betcoinnews.adapter.RecyclerLatestNewsAdapter
 import com.example.betcoinnews.databinding.FragmentLatestNewsBinding
 import com.example.betcoinnews.response.Article
 import com.example.betcoinnews.util.UtilBuilder
+import com.example.betcoinnews.viewpagerfragment.ViewPagerFragmentDirections
 
 class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
 
@@ -55,7 +57,8 @@ class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
 
         // Go to details after click on item
         viewHolder.itemView.setOnClickListener {
-            Toast.makeText(requireActivity() , dataSet.title , Toast.LENGTH_SHORT).show()
+            var action = ViewPagerFragmentDirections.actionViewPagerFragmentToDetailsNewsFragment(dataSet)
+            findNavController().navigate(action)
         }
     }
 
