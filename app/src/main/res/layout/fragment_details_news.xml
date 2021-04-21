@@ -19,7 +19,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/item_grey_border_background"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textColor="@color/white"
-            android:textSize="15dp"
+            android:textSize="@dimen/tv_title_details_news_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -53,17 +53,17 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/item_grey_border_background"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.037">
+            app:layout_constraintVertical_bias="0.057">
 
             <TextView
                 android:id="@+id/tv_title_details_news"
@@ -72,7 +72,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="@dimen/tv_details_news_text_size" />
         </LinearLayout>
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textColor="@color/white"
-            android:textSize="15dp"
+            android:textSize="@dimen/tv_title_details_news_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
@@ -91,16 +91,17 @@
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/item_grey_border_background"
+            android:layout_margin="10dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="0.167">
+            app:layout_constraintVertical_bias="0.09">
 
             <TextView
                 android:id="@+id/tv_description_details_news"
@@ -109,7 +110,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="@dimen/tv_details_news_text_size" />
         </LinearLayout>
 
 

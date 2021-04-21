@@ -26,7 +26,7 @@ class LatestNewsViewModel : ViewModel() {
     var latestNewsResponse = MutableLiveData<BetCoinResponse>()
 
     // Get news from api
-    fun getBetCoinNews( rv_latest_news : RecyclerView , tv_latest_news_not_found : TextView , context: Context){
+    fun getBetCoinNews( rv_latest_news : RecyclerView , tv_latest_news_not_found : TextView){
         CoroutineScope(Dispatchers.IO).async {
 
             var response = ServiceBuilder.makeRetrofit().getBetCoinNews("bitcoin" , "9b3d814ad7e840fa97fa9608886787f5")

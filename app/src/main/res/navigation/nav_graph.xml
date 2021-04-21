@@ -43,9 +43,5 @@
         android:id="@+id/detailsNewsFragment"
         android:name="com.example.betcoinnews.detailsnewsfragment.DetailsNewsFragment"
         android:label="Details News"
-        tools:layout="@layout/fragment_details_news" >
-        <argument
-            android:name="detailsNews"
-            app:argType="com.example.betcoinnews.response.Article" />
-    </fragment>
+        tools:layout="@layout/fragment_details_news" />
 </navigation>

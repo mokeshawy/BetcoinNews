@@ -9,7 +9,10 @@ import com.example.betcoinnews.operationroomdb.AppDataBase
 
 object UtilBuilder {
 
-     const val DATA_BASE_NAME : String = "NewsDataBase"
+    const val DATA_BASE_NAME            : String = "NewsDataBase"
+    const val DETAILS_BET_COIN_NEWS     : String = "betCoin"
+    const val DETAILS_WILL_STREET_NEWS  : String = "wallStreetJournal"
+    const val DETAILS_APPLE_NEWS        : String = "appleNews"
 
     lateinit var mProgressDialog : Dialog
     fun showProgressDialog( text : String , context: Context){

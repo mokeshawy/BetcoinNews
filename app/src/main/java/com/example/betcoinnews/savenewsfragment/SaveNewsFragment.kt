@@ -13,6 +13,7 @@ import com.example.betcoinnews.adapter.RecyclerSaveNewsAdapter
 import com.example.betcoinnews.databinding.FragmentSaveNewsBinding
 import com.example.betcoinnews.model.NewsModel
 import com.example.betcoinnews.response.Article
+import com.example.betcoinnews.util.UtilBuilder
 
 class SaveNewsFragment : Fragment() , RecyclerSaveNewsAdapter.OnClick{
 
@@ -30,10 +31,15 @@ class SaveNewsFragment : Fragment() , RecyclerSaveNewsAdapter.OnClick{
         binding.lifecycleOwner = this
         binding.saveNewsVarModel = saveNewsViewModel
 
+        // Show progress bar
+        UtilBuilder.showProgressDialog(resources.getString(R.string.tv_progress_bar_loading),requireActivity())
         // Show data from room data base
         saveNewsViewModel.showSaveNewsFromRoom(requireActivity() , binding.rvFavoriteNews , binding.tvLatestFavoriteNotFound)
         saveNewsViewModel.showSaveNews.observe(viewLifecycleOwner , Observer {
             binding.rvFavoriteNews.adapter = RecyclerSaveNewsAdapter(it , this)
+
+            // Hide progress bar
+            UtilBuilder.hideProgressDialog()
         })
 
         // Operation for refresh option

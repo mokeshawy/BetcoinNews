@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -36,7 +35,7 @@
                 android:contentDescription="@string/content_description"
                 android:minHeight="@dimen/item_list_latest_news_image_height"
                 android:scaleType="fitXY"
-                android:src="@drawable/app_gradinet_color_background"/>
+                android:src="@drawable/app_gradinet_color_background" />
 
             <View
                 android:id="@+id/view_divider"
@@ -63,20 +62,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/tv_itm_list_title_height"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/list_latest_news_item_textSize"
-                    tools:text="Item Name"/>
-
-                <ToggleButton
-                    android:id="@+id/tog_butt_save"
-                    android:layout_width="@dimen/toggle_button_width"
-                    android:layout_height="@dimen/toggle_button_height"
-                    android:background="@drawable/toggle_selector"
-                    android:textOff=""
-                    android:textOn=""
-                    android:layout_gravity="end|bottom"/>
-
+                    android:textSize="@dimen/list_other_news_item_textSize"
+                    android:text="Item Name" />
             </LinearLayout>
 
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </layout>

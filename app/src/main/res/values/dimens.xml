@@ -23,6 +23,13 @@
     <dimen name="toggle_button_width">30dp</dimen>
     <dimen name="toggle_button_height">30dp</dimen>
 
+    <dimen name="tv_title_details_news_text_size">17sp</dimen>
+    <dimen name="tv_details_news_text_size">15sp</dimen>
+
+    <dimen name="list_other_news_item_textSize">13sp</dimen>
+
+
+
 
 
 </resources>

@@ -40,7 +40,7 @@ class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
         // Show progress dialog
         UtilBuilder.showProgressDialog(getString(R.string.tv_progress_bar_loading) , requireActivity())
         // Call fun for operation api get news betCoin
-        latestNewsViewModel.getBetCoinNews( binding.rvLatestNews , binding.tvLatestNewsNotFound , requireActivity())
+        latestNewsViewModel.getBetCoinNews( binding.rvLatestNews , binding.tvLatestNewsNotFound)
         latestNewsViewModel.latestNewsResponse.observe(viewLifecycleOwner , Observer {
             binding.rvLatestNews.adapter = RecyclerLatestNewsAdapter(it.articles , this )
             // Hide progress
@@ -57,8 +57,9 @@ class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
 
         // Go to details after click on item
         viewHolder.itemView.setOnClickListener {
-            var action = ViewPagerFragmentDirections.actionViewPagerFragmentToDetailsNewsFragment(dataSet)
-            findNavController().navigate(action)
+             var bundle = Bundle()
+            bundle.putSerializable(UtilBuilder.DETAILS_BET_COIN_NEWS,dataSet)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_detailsNewsFragment , bundle)
         }
     }
 
