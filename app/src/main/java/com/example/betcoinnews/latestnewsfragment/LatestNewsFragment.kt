@@ -39,6 +39,7 @@ class LatestNewsFragment : Fragment() , RecyclerLatestNewsAdapter.OnClick{
 
         // Show progress dialog
         UtilBuilder.showProgressDialog(getString(R.string.tv_progress_bar_loading) , requireActivity())
+
         // Call fun for operation api get news betCoin
         latestNewsViewModel.getBetCoinNews( binding.rvLatestNews , binding.tvLatestNewsNotFound)
         latestNewsViewModel.latestNewsResponse.observe(viewLifecycleOwner , Observer {

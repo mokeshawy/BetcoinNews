@@ -43,6 +43,7 @@ class RecyclerAppleNewsAdapter (private val dataSet: List<Article> , var onClick
     // Return the size of your dataSet (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
 
+    // Interface on click
     interface OnClickAppleNews{
         fun onClickAppleNews(viewHolder: ViewHolder , dataSet: Article , position: Int)
     }

@@ -28,11 +28,13 @@ class SaveNewsFragment : Fragment() , RecyclerSaveNewsAdapter.OnClick{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Connect whit view model
         binding.lifecycleOwner = this
         binding.saveNewsVarModel = saveNewsViewModel
 
         // Show progress bar
         UtilBuilder.showProgressDialog(resources.getString(R.string.tv_progress_bar_loading),requireActivity())
+
         // Show data from room data base
         saveNewsViewModel.showSaveNewsFromRoom(requireActivity() , binding.rvFavoriteNews , binding.tvLatestFavoriteNotFound)
         saveNewsViewModel.showSaveNews.observe(viewLifecycleOwner , Observer {
@@ -50,7 +52,6 @@ class SaveNewsFragment : Fragment() , RecyclerSaveNewsAdapter.OnClick{
 
         // Make check on select item continuous
         saveNewsViewModel.checkForToggleButton( requireActivity() , dataSet.title , viewHolder.binding.togButtSave)
-
         viewHolder.binding.togButtSave.setOnClickListener {
             saveNewsViewModel.deleteFromRoomDataBase(requireActivity() , dataSet.title)
         }

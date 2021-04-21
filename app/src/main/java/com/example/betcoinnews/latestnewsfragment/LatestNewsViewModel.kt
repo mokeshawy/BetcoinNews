@@ -25,7 +25,7 @@ class LatestNewsViewModel : ViewModel() {
 
     var latestNewsResponse = MutableLiveData<BetCoinResponse>()
 
-    // Get news from api
+    // Get bet coin news from api
     fun getBetCoinNews( rv_latest_news : RecyclerView , tv_latest_news_not_found : TextView){
         CoroutineScope(Dispatchers.IO).async {
 
@@ -66,6 +66,7 @@ class LatestNewsViewModel : ViewModel() {
         }
     }
 
+    // Un save item in room data base
     fun deleteItemsFormRoomBd( context: Context , title: String){
 
         CoroutineScope(Dispatchers.IO).async {

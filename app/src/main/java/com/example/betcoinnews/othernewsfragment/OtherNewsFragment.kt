@@ -31,22 +31,31 @@ class OtherNewsFragment : Fragment() , RecyclerAppleNewsAdapter.OnClickAppleNews
         binding.lifecycleOwner      = this
         binding.otherNewsVarModel   = otherNewsViewModel
 
+        // Show progress bar
         UtilBuilder.showProgressDialog(resources.getString(R.string.tv_progress_bar_loading) , requireActivity())
+
+        // Call fun wall street news
         otherNewsViewModel.wallStreetJournal()
         otherNewsViewModel.wallStreetJournal.observe(viewLifecycleOwner, Observer {
             binding.rvOtherNews.adapter = RecyclerWillStreetNewsAdapter(it.articles , this)
+
+            // Hide progress bar
             UtilBuilder.hideProgressDialog()
         })
 
+        // Call fun apple news
         otherNewsViewModel.appleNews()
         otherNewsViewModel.appleNews.observe(viewLifecycleOwner, Observer {
             binding.rvOtherNewsExtra.adapter = RecyclerAppleNewsAdapter(it.articles , this)
+
+            // Hide progress bar
             UtilBuilder.hideProgressDialog()
         })
     }
 
     override fun onClickAppleNews( viewHolder: RecyclerAppleNewsAdapter.ViewHolder,dataSet: Article, position: Int) {
 
+        // Go details for items apple news
         viewHolder.itemView.setOnClickListener {
             var bundle = Bundle()
             bundle.putSerializable(UtilBuilder.DETAILS_APPLE_NEWS,dataSet)
@@ -55,6 +64,8 @@ class OtherNewsFragment : Fragment() , RecyclerAppleNewsAdapter.OnClickAppleNews
     }
 
     override fun onClickWillStreet(viewHolder: RecyclerWillStreetNewsAdapter.ViewHolder, dataSet: Article, position: Int) {
+
+        // Go details for item wall street news
         viewHolder.binding.ivItemLatestNews.setOnClickListener {
             var bundle = Bundle()
             bundle.putSerializable(UtilBuilder.DETAILS_WILL_STREET_NEWS,dataSet)

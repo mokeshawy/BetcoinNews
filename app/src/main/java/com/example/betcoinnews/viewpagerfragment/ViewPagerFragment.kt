@@ -24,6 +24,7 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Operation work viewPager2 whit tapLayout
         val tabLayout   = binding.tabLayout
         val viewPager2  = binding.viewPager2
 
